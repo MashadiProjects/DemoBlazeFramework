@@ -7,13 +7,17 @@ import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import pages.CartPage;
+import pages.HomePage;
+import pages.OrderPage;
+import pages.ProductPage;
 
 public class Steps extends Base {
 
     @Before
     public void setup(Scenario scenario) {
         this.scenario = scenario;
-        driver = BrowserFactory.getDriver(); // Your existing browser factory [cite: 1]
+        driver = BrowserFactory.getDriver(); // Your existing browser factory
         homePage = new HomePage(driver);
         productPage = new ProductPage(driver);
         cartPage = new CartPage(driver);
