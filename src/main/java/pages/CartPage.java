@@ -2,21 +2,30 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class CartPage {
     WebDriver driver;
-    By cartLink = By.id("cartur");
-    By productNameInCart = By.xpath("//td[2]");
+
+    @FindBy(id = "cartur")
+    WebElement  cartLink;
+// XPath to locate the product name in the cart
+    @FindBy(xpath = "//td[2]")
+    WebElement productNameInCart;
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void goToCart() {
-        driver.findElement(cartLink).click();
+        driver.findElement((By) cartLink).click();
     }
 
     public String getCartProductName() {
-        return driver.findElement(productNameInCart).getText();
+        return driver.findElement((By) productNameInCart).getText();
+    }
+
+    public void clickPlaceOrder() {
     }
 }
