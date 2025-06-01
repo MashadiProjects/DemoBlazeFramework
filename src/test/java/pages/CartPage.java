@@ -11,6 +11,7 @@ public class CartPage {
 
     @FindBy(xpath = "//button[text()='Place Order']")
     private WebElement placeOrderButton;
+
     @FindBy(id = "cartur")
     WebElement  cartLink;
 // XPath to locate the product name in the cart
