@@ -9,11 +9,15 @@ import pages.ProductPage;
 import utils.BrowserFactory;
 
 public class Base {
-//to link the browser and page objects
-    //add page objects here
+//To link the browser and page object,add page objects here
 
     BrowserFactory browserFactory = new BrowserFactory();
     final WebDriver driver = browserFactory.startBrowser("chrome", "https://www.demoblaze.com/index.html");
+    /*
+    The above parameters are only passed if running  locally.
+    When running in a pipeline, the browser and URL will be passed from the pipeline configuration. as parameters */
+
+    //Now create a link betwee
     HomePage homePage = PageFactory.initElements(driver, HomePage.class);
     ProductPage productPage = PageFactory.initElements(driver, ProductPage.class);
     CartPage cartPage = PageFactory.initElements(driver, CartPage.class);
