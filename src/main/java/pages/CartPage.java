@@ -8,6 +8,9 @@ import org.openqa.selenium.support.FindBy;
 public class CartPage {
     WebDriver driver;
 
+
+    @FindBy(xpath = "//button[text()='Place Order']")
+    private WebElement placeOrderButton;
     @FindBy(id = "cartur")
     WebElement  cartLink;
 // XPath to locate the product name in the cart
