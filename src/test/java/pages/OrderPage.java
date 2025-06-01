@@ -14,7 +14,6 @@ public class OrderPage {
     WebElement purchaseBtn;
     @FindBy(id = "name")
     WebElement  nameInput;
-
     @FindBy(id = "country")
     WebElement  countryInput;
     @FindBy(id = "city")
@@ -30,7 +29,9 @@ public class OrderPage {
     WebElement purchaseConfirmationMessage;
 
 
+    //Constructor to initialze the WebDriver
     public OrderPage(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -57,5 +58,11 @@ public class OrderPage {
     }
 
     public void clickOkOnConfirmation() {
+    }
+
+    public void acceptErrorMessage() {
+    }
+
+    public String getErrorMessage() {
     }
 }

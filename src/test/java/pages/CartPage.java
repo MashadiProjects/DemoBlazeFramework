@@ -18,7 +18,9 @@ public class CartPage {
     @FindBy(xpath = "//td[2]")
     WebElement productNameInCart;
 
+    //Constructor to initialze the WebDriver
     public CartPage(WebDriver driver) {
+
         this.driver = driver;
     }
 
@@ -31,5 +33,8 @@ public class CartPage {
     }
 
     public void clickPlaceOrder() {
+    }
+
+    public boolean isProductAddedToCart(String laptopName) {
     }
 }

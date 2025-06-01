@@ -44,35 +44,48 @@ public class Steps extends Base {
 }
     @When("I add the laptop to cart")
     public void i_add_the_laptop_to_cart() {
-        public void iAddTheLaptopToCart() {
-            productPage.addToCart(); [cite: 1]
+            productPage.addToCart();
     }
 
 
     @Then("I verify the popup message {string} and click OK")
     public void i_verify_the_popup_message_and_click_ok(String string) {
-            String actualMessage = productPage.getPopupMessage(); [cite: 1]
+            String actualMessage = productPage.getPopupMessage();
             org.testng.Assert.assertEquals(actualMessage, expectedMessage, "Popup message mismatch.");
-            productPage.acceptPopup(); [cite: 1]
+            productPage.acceptPopup();
             scenario.attach(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png", "Product Added Popup");
         }
 
 
     @When("I navigate to Cart")
     public void i_navigate_to_cart() {
-            cartPage.goToCart(); [cite: 1]
+            cartPage.goToCart();
     }
 
 
     @Then("I verify the added laptop {string} is available")
     public void i_verify_the_added_laptop_is_available(String laptopName) { {
-           org.testng.Assert.assertTrue(cartPage.isProductAddedToCart(laptopName), laptopName + " not found in cart."); [cite: 1]
-                scenario.attach(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png", "Cart with Laptop"); [
+           org.testng.Assert.assertTrue(cartPage.isProductAddedToCart(laptopName), laptopName + " not found in cart.");
+                scenario.attach(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png", "Cart with Laptop");
     }
     @When("I place an order")
     public void i_place_an_order() {
         cartPage.clickPlaceOrder();
     }
+
+    @When("I click Purchase without filling information")
+        public void iClickPurchaseWithoutFillingInformation() {
+            orderPage.clickPurchase();
+        }
+
+        @Then("I verify the error message returned")
+        public void iVerifyTheErrorMessageReturned() {
+            String errorMessage = orderPage.getErrorMessage();
+            org.testng.Assert.assertFalse(errorMessage.isEmpty(), "Error message was empty."); // Or assert specific message
+            System.out.println("Error Message: " + errorMessage);
+            orderPage.acceptErrorMessage();
+            scenario.attach(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES), "image/png", "Error Message Popup");
+        }
 
     @When("I complete the Place order screen with data from excel for row {int}")
     public void i_complete_the_place_order_screen_with_data_from_excel_for_row(Integer int1) {

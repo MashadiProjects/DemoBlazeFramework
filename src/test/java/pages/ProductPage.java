@@ -15,19 +15,28 @@ public class ProductPage {
    WebElement addToCartBtn;
 
 
-
+    //Constructor to initialze the WebDriver
     public ProductPage(WebDriver driver) {
+
         this.driver = driver;
     }
 
+    //Method to select the 1st laptop from the product list
     public void selectFirstLaptop() {
         driver.findElements((By) productName).get(0).click();
     }
 
+    //method to get the name of the selected laptop
+    public String getSelectedLaptopName() {
+        return driver.findElement((By) productName).getText();
+    }
+
+    //Method to add the selected laptop to the cart
     public void addToCart() {
         driver.findElement((By) addToCartBtn).click();
     }
 
+    //
     public void acceptPopup() {
     }
 

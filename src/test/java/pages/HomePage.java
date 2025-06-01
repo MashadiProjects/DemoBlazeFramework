@@ -13,7 +13,9 @@ public class HomePage {
     @FindBy(id = "nava")
     WebElement storeHeader;
 
+    //Constructor to initialze the WebDriver
     public HomePage(WebDriver driver) {
+
         this.driver = driver;
     }
 
