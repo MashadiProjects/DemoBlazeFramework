@@ -4,6 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductPage {
     WebDriver driver;
@@ -23,6 +27,8 @@ public class ProductPage {
 
     //Method to select the 1st laptop from the product list
     public void selectFirstLaptop() {
+
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(productName));
         driver.findElements((By) productName).get(0).click();
     }
 
