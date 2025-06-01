@@ -12,6 +12,7 @@ public class BrowserFactory {
     static WebDriver driver;
 
     public static WebDriver startBrowser(String browserChoice, String url){
+
         switch (browserChoice.toLowerCase()){
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();

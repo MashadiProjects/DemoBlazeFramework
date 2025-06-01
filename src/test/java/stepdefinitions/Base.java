@@ -9,7 +9,7 @@ import pages.ProductPage;
 import utils.BrowserFactory;
 
 public class Base {
-
+//to link the browser and page objects
     //add page objects here
 
     BrowserFactory browserFactory = new BrowserFactory();
