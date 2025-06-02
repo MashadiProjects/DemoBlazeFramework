@@ -7,16 +7,18 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class BrowserFactory {
 
     static WebDriver driver;
 
-    public static WebDriver startBrowser(String browserChoice, String url){
+    public static WebDriver startBrowser(String browserChoice, String url) {
 
-        switch (browserChoice.toLowerCase()){
+        switch (browserChoice.toLowerCase()) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
-               // chromeOptions.addArguments("--headless");
+                // chromeOptions.addArguments("--headless");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
@@ -29,7 +31,10 @@ public class BrowserFactory {
         driver.manage().window().maximize();
         return driver;
     }
+
 }
+
+
 
 
 

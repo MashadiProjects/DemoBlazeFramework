@@ -34,11 +34,13 @@ public class ProductPage {
 
     //method to get the name of the selected laptop
     public String getSelectedLaptopName() {
+
         return driver.findElement((By) productName).getText();
     }
 
     //Method to add the selected laptop to the cart
     public void addToCart() {
+
         driver.findElement((By) addToCartBtn).click();
     }
 

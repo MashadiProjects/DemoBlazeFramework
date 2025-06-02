@@ -12,35 +12,35 @@ import java.time.Duration;
 public class CartPage {
     WebDriver driver;
 
-
     @FindBy(xpath = "//button[text()='Place Order']")
     private WebElement placeOrderButton;
 
     @FindBy(id = "cartur")
-    WebElement  cartLink;
-// XPath to locate the product name in the cart
+    WebElement cartLink;
+
     @FindBy(xpath = "//td[2]")
     WebElement productNameInCart;
 
-    //Constructor to initialze the WebDriver
+    // Constructor to initialize the WebDriver
     public CartPage(WebDriver driver) {
-
         this.driver = driver;
     }
 
     public void goToCart() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(cartLink));
-
-        driver.findElement((By) cartLink).click();
+        cartLink.click();
     }
 
     public String getCartProductName() {
-        return driver.findElement((By) productNameInCart).getText();
+        return productNameInCart.getText();
     }
 
     public void clickPlaceOrder() {
+        placeOrderButton.click();
     }
 
-    public boolean isProductAddedToCart(String laptopName) {
+    public boolean isLaptopInCart(String laptopName) {
+        String cartProductName = getCartProductName();
+        return cartProductName.equalsIgnoreCase(laptopName);
     }
 }

@@ -60,17 +60,16 @@ public class OrderPage {
 
     public String getPurchaseConfirmationMessage() {
 
-        return driver.findElement((By) purchaseConfirmationMessage).getText();
-    }
+        return driver.findElement((By) purchaseConfirmationMessage).getText();   }
 
-    public void clickOkOnConfirmation() {
-    }
 
-    public void acceptErrorMessage() {
-    }
 
     public String getErrorMessage() {
 
         return driver.findElement(By.xpath("//div[@class='sweet-alert showSweetAlert visible']//p")).getText();
     }
+
+    public void fillOrderDetails(String name, String country, String city, String creditCard, String month, String year) {
+    }
+
 }
