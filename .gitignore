@@ -1,0 +1,32 @@
+# IntelliJ IDEA files
+.idea/
+*.iml
+
+# Maven target directory
+target/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Java-specific files
+*.class
+
+# Test reports
+Reports/
+cucumber-reports.html
+cucumber.json
+
+# Extent Reports
+ExtentReports/
+
+# Generated files
+screenshots/

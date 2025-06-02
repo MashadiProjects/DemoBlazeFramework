@@ -14,6 +14,6 @@ Feature: DemoBlaze Application Test
     Then I verify the error message returned
     And I complete the Place order screen with the following details:
       | Name       | Country   | City      | CreditCard | Month | Year |
-      | John Doe   | USA       | New York  | 1234567890 | 12    | 2023 |
+      | Marang Montle  | RSA       | Pretoria  | 1234567890 | 12    | 2024 |
     And I click Purchase to confirm order
     Then I verify that the order was successfully purchased
