@@ -32,12 +32,11 @@ public class Base {
 
 
     // Method to take a screenshot and save it locally
-    public void takeScreenshot(String screenshotName) {
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            Files.copy(screenshot.toPath(), new File("screenshots/" + screenshotName + ".png").toPath());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//    public void takeScreenshot(String screenshotName) {
+//        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//        try {
+//            Files.copy(screenshot.toPath(), new File("screenshots/" + screenshotName + ".png").toPath());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
-}

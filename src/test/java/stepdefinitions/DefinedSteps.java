@@ -34,7 +34,7 @@ public class DefinedSteps extends Base {
     @Given("I verify that I am in the product store")
     public void i_verify_that_i_am_in_the_product_store() {
         Assert.assertTrue(homePage.isProductStoreTitleDisplayed(), "Product store title not displayed.");
-        takeScreenshot("Product Store Page");
+        //takeScreenshot("Product Store Page");
     }
 
     @When("I click Laptops under categories")
@@ -45,7 +45,7 @@ public class DefinedSteps extends Base {
     @When("I click on {string} laptop")
     public void i_click_on_laptop(String laptopName) {
         productPage.selectFirstLaptop();
-        takeScreenshot("Selected Laptop: " + laptopName);
+        //takeScreenshot("Selected Laptop: " + laptopName);
     }
 
     @When("I add the laptop to cart")
@@ -58,7 +58,7 @@ public class DefinedSteps extends Base {
         String actualMessage = productPage.getPopupMessage();
         Assert.assertEquals(actualMessage, expectedMessage, "Popup message mismatch.");
         productPage.acceptPopup();
-        takeScreenshot("Product Added Popup");
+        //takeScreenshot("Product Added Popup");
     }
 
     @When("I navigate to Cart")
@@ -69,7 +69,7 @@ public class DefinedSteps extends Base {
     @Then("I verify the added laptop {string} is available")
     public void i_verify_the_added_laptop_is_available(String laptopName) {
         Assert.assertTrue(cartPage.isLaptopInCart(laptopName), laptopName + " not found in cart.");
-        takeScreenshot("Cart with Laptop");
+        //takeScreenshot("Cart with Laptop");
     }
 
     @When("I place an order")
@@ -86,7 +86,7 @@ public class DefinedSteps extends Base {
     public void i_verify_the_error_message_returned() {
         String errorMessage = orderPage.getErrorMessage();
         Assert.assertFalse(errorMessage.isEmpty(), "Error message was empty.");
-        takeScreenshot("Error Message Popup");
+        //takeScreenshot("Error Message Popup");
     }
 
     @When("I complete the Place order screen with the following details:")
@@ -111,7 +111,7 @@ public class DefinedSteps extends Base {
     public void i_verify_that_the_order_was_successfully_purchased() {
         String confirmationMessage = orderPage.getPurchaseConfirmationMessage();
         Assert.assertTrue(confirmationMessage.contains("Thank you for your purchase!"), "Order confirmation message not found.");
-        takeScreenshot("Purchase Confirmation");
+        //takeScreenshot("Purchase Confirmation");
     }
 
     @AfterStep
