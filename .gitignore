@@ -24,6 +24,7 @@ Thumbs.db
 Reports/
 cucumber-reports.html
 cucumber.json
+test-output/
 
 # Extent Reports
 ExtentReports/

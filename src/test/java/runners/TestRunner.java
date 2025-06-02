@@ -10,6 +10,7 @@ import io.cucumber.testng.CucumberOptions;
         glue = {"stepdefinitions"},
         plugin = {"pretty", "html:Reports/cucumber-reports.html",
                 "json:target/cucumber.json",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" // For Extent Report
 
         },
         monochrome = true, // Readable console output
@@ -18,5 +19,5 @@ import io.cucumber.testng.CucumberOptions;
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
-}// "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:" // For Extent Report
+}
 
