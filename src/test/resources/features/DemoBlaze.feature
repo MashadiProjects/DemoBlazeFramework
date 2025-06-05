@@ -13,7 +13,7 @@ Feature: DemoBlaze Application Test
     And I click Purchase without filling information
     Then I verify the error message returned
     And I complete the Place order screen with the following details:
-      | Name       | Country   | City      | CreditCard | Month | Year |
-      | Marang Montle  | RSA       | Pretoria  | 1234567890 | 12    | 2024 |
+      | Name          | Country | City     | CreditCard | Month | Year |
+      | Marang Montle | RSA     | Pretoria | 1234567890 | 12    | 2024 |
     And I click Purchase to confirm order
     Then I verify that the order was successfully purchased
